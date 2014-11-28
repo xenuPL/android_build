@@ -49,10 +49,10 @@ $(combo_var_prefix)HAVE_STRLCPY := 0
 $(combo_var_prefix)HAVE_STRLCAT := 0
 $(combo_var_prefix)HAVE_KERNEL_MODULES := 0
 
-$(combo_var_prefix)GLOBAL_CFLAGS := -fno-exceptions -Wno-multichar
+$(combo_var_prefix)GLOBAL_CFLAGS := -O3 -fno-exceptions -Wno-multichar
 ifeq ($(TARGET_USE_03),true)
 $(combo_var_prefix)RELEASE_CFLAGS := -O3 -g -fno-strict-aliasing
-$(combo_var_prefix)GLOBAL_CPPFLAGS :=
+$(combo_var_prefix)GLOBAL_CPPFLAGS := -O3
 $(combo_var_prefix)GLOBAL_LDFLAGS := -Wl,-O3
 else
 $(combo_var_prefix)RELEASE_CFLAGS := -O2 -g -fno-strict-aliasing
@@ -137,3 +137,4 @@ ifdef CXX_WRAPPER
     $(combo_var_prefix)CXX := $(CXX_WRAPPER) $($(combo_var_prefix)CXX)
   endif
 endif
+

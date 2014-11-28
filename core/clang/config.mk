@@ -52,7 +52,15 @@ CLANG_CONFIG_UNKNOWN_CFLAGS := \
   -Wmaybe-uninitialized \
   -Wno-maybe-uninitialized \
   -Wno-error=maybe-uninitialized \
-  -fno-canonical-system-headers
+  -fno-canonical-system-headers  \
+  -funsafe-loop-optimizations \
+  -fsection-anchors \
+  -ftree-loop-im \
+  -ftree-loop-ivcanon \
+  -fgcse-sm \
+  -fgcse-las \
+  -fweb
+
 
 # Clang flags for all host rules
 CLANG_CONFIG_HOST_EXTRA_ASFLAGS :=
